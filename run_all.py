@@ -13,6 +13,7 @@ Example: /Users/yuliya/Documents/projet BIO/code/hsv_images/30 avril/p04
 from segmentation_functions import image_segmentation_i
 from skeleton_to_curve import skeleton_to_graph, graph_to_curve, compute_derivatives, plot_derivatives
 from angle_transformation import distance_transformation, angle_transform, crop_image
+from hsv import to_hsv, plot_hsv_diagram
 import scipy.io
 from circvar_entropy import compute_circvar, compute_entropy, compute_std
 from PIL import Image 
