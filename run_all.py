@@ -10,12 +10,11 @@ Example: /Users/yuliya/Documents/projet BIO/code/hsv_images/30 avril/p04
 - statistical information about the corrected orientations of all the samples is stored in an integral table "Results_stats.csv"
 
 """
-from segmentation_functions import*
-from skeleton_to_curve import*
-from angle_transformation import*
+from segmentation_functions import image_segmentation_i
+from skeleton_to_curve import skeleton_to_graph, graph_to_curve, compute_derivatives, plot_derivatives
+from angle_transformation import distance_transformation, angle_transform, crop_image
 import scipy.io
-from hsv import*
-from circvar_entropy import*
+from circvar_entropy import compute_circvar, compute_entropy, compute_std
 from PIL import Image 
 import os
 from skimage.morphology import medial_axis
@@ -70,7 +69,7 @@ def transformation(sample_i,date,nom_ech_i,df_dict,path_to_folder):
     mat = scipy.io.loadmat(path_mat)
     
         # procees transformation of angles
-    old_angles_zstack, new_angles_zstack = angle_transformation(ind_max, mat, segmentation, derivatives, dist, ind,y,x)
+    old_angles_zstack, new_angles_zstack = angle_transform(ind_max, mat, segmentation, derivatives, dist, ind,y,x)
     
         # crop extremities
     delta = 30 #number of pixels to crop from both sides (left and right bord)
