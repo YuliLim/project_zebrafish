@@ -61,7 +61,7 @@ def cut_corn(segmentation,dist):
                     segm_sans_corne[i][j] = False
     return segm_sans_corne
 
-def angle_transformation(ind_max, mat, segmentation, derivatives, dist, ind,y,x):
+def angle_transform(ind_max, mat, segmentation, derivatives, dist, ind,y,x):
     """
     The correction of the angles are performed in several steps:
     - Initial orientations for the chosen index are collected from external array (mat['PHICH03'])
