@@ -18,10 +18,12 @@ import scipy.io
 from circvar_entropy import compute_circvar, compute_entropy, compute_std
 from PIL import Image 
 import os
+import sys
 from skimage.morphology import medial_axis
 
-    
-path_to_folder = "/Users/yuliya/Documents/projet BIO/"
+sys.path.append(os.path.join(os.path.dirname(os.getcwd()), "data")) 
+
+path_to_folder = os.path.join(os.path.dirname(os.getcwd()), "data")
 """
 Global variable storing path to the data. The data storage is expected to be organized in the following way:
     path_to_folder/date/sample name/Zstack type/*.tif 
